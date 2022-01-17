@@ -101,5 +101,3 @@ struct r2score{T<:AbstractFloat}
         return 1 - residuals/squares
     end
 end
-
-println(r2score([1,1], [3,4]))
