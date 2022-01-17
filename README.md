@@ -11,3 +11,4 @@ Loss Function       |       Full Form         |       Description     |      |
 **rmse**  |    Mean Squared Error    |     |  ☑️  |
 **rmae**  |   Root Mean Squared Error    |     |  ☑️  |
 **rmsle** |   Root Mean Squared Logarithmic Error    |     |  ☑️  |
+**r2score** | R square score |    |  ☑️  |

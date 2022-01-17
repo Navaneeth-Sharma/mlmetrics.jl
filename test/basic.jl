@@ -32,4 +32,11 @@ include("../src/basic.jl")
         @test rmsle([1,1], [1,1]) == 0
         @test rmsle([100,101], [30,400]) == 1.2785158831395131
     end
+
+    @testset "R2SCORE" begin
+        @test r2score(1, 1) == 1
+        @test r2score([1,1], [1,1]) == 1
+        @test r2score([1,1], [3,4]) == -11.5
+    end
+
 end

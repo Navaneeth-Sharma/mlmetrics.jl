@@ -34,6 +34,13 @@
         ŷ::Vector
     end
     The root mean squared log error is the square root of the mean squared log error.
+
+
+    struct r2score{T<:AbstractFloat}
+        y::Vector
+        ŷ::Vector
+    end
+    The R2 is a statistic that will give some information about the goodness of fit of a model.
 """
 
 using  Statistics
@@ -83,3 +90,16 @@ struct rmsle{T<:AbstractFloat}
         return sqrt(mean((log.(y .+ 1) - log.(ŷ .+ 1)).^2))
     end
 end
+
+struct r2score{T<:AbstractFloat}
+    y::Vector
+    ŷ::Vector
+
+    function r2score(y, ŷ)
+        squares = sum(y.^2)
+        residuals = sum(y - ŷ).^2
+        return 1 - residuals/squares
+    end
+end
+
+println(r2score([1,1], [3,4]))
