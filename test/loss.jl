@@ -1,5 +1,5 @@
 using Test
-include("../src/basic.jl")
+include("../src/loss.jl")
 
 @testset "Basic Loss Functions" begin
 
