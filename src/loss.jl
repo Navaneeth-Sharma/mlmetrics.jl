@@ -101,3 +101,13 @@ struct r2score{T<:AbstractFloat}
         return 1 - residuals/squares
     end
 end
+
+struct binarycrossentropy{T<:AbstractFloat}
+    y::Vector
+    ŷ::Vector
+
+    function binarycrossentropy(y, ŷ)
+        ε = 1e-10
+        return -mean(y*log2(ŷ + ε) + (1-y)log2(1-ŷ+ε))
+    end
+end
