@@ -4,11 +4,11 @@ This repository contains a collection of metrics for evaluating machine learning
 
 ## Regression metrics
 
-Loss Function       |       Full Form         |       Description     |      |
---------------------|----------------------|----------------------|--------|
-**mse**  |    Mean Squared Error    |   Mean squared error is the mean of the squared errors  |  ☑️  |
-**mae**  |    Mean Absolute Error    |     |  ☑️  |
-**rmse**  |    Mean Squared Error    |     |  ☑️  |
-**rmae**  |   Root Mean Squared Error    |     |  ☑️  |
-**rmsle** |   Root Mean Squared Logarithmic Error    |     |  ☑️  |
-**r2score** | R square score |    |  ☑️  |
+Loss Function       |       Full Form         |    Implemented      |      
+--------------------|----------------------|----------------------|
+**mse**  |    Mean Squared Error    |   ☑️  |
+**mae**  |    Mean Absolute Error    |     ☑️  |
+**rmse**  |    Mean Squared Error    |    ☑️  |
+**rmae**  |   Root Mean Squared Error    |  ☑️  |
+**rmsle** |   Root Mean Squared Logarithmic Error    |   ☑️  |
+**r2score** | R square score |  ☑️  |
