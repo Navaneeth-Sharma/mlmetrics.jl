@@ -108,6 +108,7 @@ struct binarycrossentropy{T<:AbstractFloat}
 
     function binarycrossentropy(y, ŷ)
         ε = 1e-10
-        return -mean(y*log2(ŷ + ε) + (1-y)log2(1-ŷ+ε))
+        return -mean(y.*log2.(ŷ .+ ε) + (1 .- y).*log2.(1 .- ŷ .+ ε))
     end
 end
+

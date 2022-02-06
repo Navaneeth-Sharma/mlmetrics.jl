@@ -39,4 +39,9 @@ include("../src/loss.jl")
         @test r2score([1,1], [3,4]) == -11.5
     end
 
+    @testset "BINCROSSENTROPY" begin
+        @test binarycrossentropy(1, 0.9) == 1
+        @test binarycrossentropy([0,0,1], [0.2,0.3,0.8]) == 0.3861431206792365
+    end
+
 end

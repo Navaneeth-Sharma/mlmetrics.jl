@@ -4,7 +4,7 @@ This repository contains a collection of metrics for evaluating machine learning
 
 ## Regression metrics
 
-Loss Function       |       Full Form         |    Implemented      |      
+Loss Function       |       Full Form         |    Implemented      |
 --------------------|----------------------|----------------------|
 **mse**  |    Mean Squared Error    |   ☑️  |
 **mae**  |    Mean Absolute Error    |     ☑️  |
