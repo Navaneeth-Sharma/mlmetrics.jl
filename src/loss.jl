@@ -1,3 +1,6 @@
+module mlmetrics
+using  Statistics
+
 """
     struct mse{T<:AbstractFloat}
         y::Vector
@@ -43,7 +46,6 @@
     The R2 is a statistic that will give some information about the goodness of fit of a model.
 """
 
-using  Statistics
 
 
 struct mse{T<:AbstractFloat}
@@ -112,3 +114,4 @@ struct binarycrossentropy{T<:AbstractFloat}
     end
 end
 
+end

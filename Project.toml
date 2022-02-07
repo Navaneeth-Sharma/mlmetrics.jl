@@ -1,0 +1,13 @@
+name = "mlmetrics"
+uuid = "48ed7837-09b0-4ce6-9d5d-5c1d82a2f03c"
+authors = ["Navaneeth Sharma"]
+version = "0.0.1"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
