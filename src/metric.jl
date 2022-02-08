@@ -128,12 +128,44 @@ struct precision{T<:AbstractFloat}
     y_true::AbstractArray
     y_predict::AbstractArray
 
-    function accuracy(y_true::AbstractArray, y_predict::AbstractArray)
-        return sum(y_true.==y_predict)/length(y_true)
+    function precision(y_true::AbstractArray, y_predict::AbstractArray)
+        true_positives = sum(y_true.== 1 .== y_predict)
+        true_negatives = sum(y_true.== 0 .== y_predict)
+        false_positives = sum(y_true.!= 1 .== y_predict)
+        false_negatives = sum(y_true.!= 0 .== y_predict)
+
+        return true_positives/(true_positives + false_positives)
     end
 
 end
 
+
+struct recall{T<:AbstractFloat}
+    y_true::AbstractArray
+    y_predict::AbstractArray
+
+    function recall(y_true::AbstractArray, y_predict::AbstractArray)
+        true_positives = sum(y_true.== 1 .== y_predict)
+        true_negatives = sum(y_true.== 0 .== y_predict)
+        false_positives = sum(y_true.!= 1 .== y_predict)
+        false_negatives = sum(y_true.!= 0 .== y_predict)
+
+        return true_positives/(true_positives + false_negatives)
+    end
+    
+end
+
+struct f1_score{T<:AbstractFloat}
+    y_true::AbstractArray
+    y_predict::AbstractArray
+
+    function f1_score(y_true::AbstractArray, y_predict::AbstractArray)
+        num =  2 * precision(y_true, y_predict) * recall(y_true, y_predict) 
+        den = precision(y_true, y_predict) + recall(y_true, y_predict)
+        return num/den
+    end
+
+end
 
 end
 
