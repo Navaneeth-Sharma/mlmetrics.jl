@@ -108,10 +108,32 @@ struct binarycrossentropy{T<:AbstractFloat}
     y::Vector
     ŷ::Vector
 
-    function binarycrossentropy(y, ŷ)
+    function binarycrossentropy(y::Vector, ŷ::Vector)
         ε = 1e-10
         return -mean(y.*log2.(ŷ .+ ε) + (1 .- y).*log2.(1 .- ŷ .+ ε))
     end
 end
 
+struct accuracy{T<:AbstractFloat}
+    y_true::AbstractArray
+    y_predict::AbstractArray
+
+    function accuracy(y_true::AbstractArray, y_predict::AbstractArray)
+        return sum(y_true.==y_predict)/length(y_true)
+    end
+
 end
+
+struct precision{T<:AbstractFloat}
+    y_true::AbstractArray
+    y_predict::AbstractArray
+
+    function accuracy(y_true::AbstractArray, y_predict::AbstractArray)
+        return sum(y_true.==y_predict)/length(y_true)
+    end
+
+end
+
+
+end
+
